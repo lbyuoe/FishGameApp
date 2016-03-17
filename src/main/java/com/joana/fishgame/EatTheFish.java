@@ -66,7 +66,7 @@ public class EatTheFish extends Application{
 
         final Sprite shark = new Sprite();
         shark.setImage("file:shark2.png");
-        shark.setPosition(0, 0);
+        shark.setPosition(0, 400);
 
         final ArrayList<Sprite> fishList = new ArrayList<>();
 
@@ -119,8 +119,11 @@ public class EatTheFish extends Application{
                 gc.clearRect(0, 0, 512, 512);
                 shark.render(gc);
 
-                for (Sprite fish : fishList)
-                    fish.render(gc);
+                for (Sprite fish : fishList){
+                    fish.setVelocity(-50, 0);
+                    fish.addVelocity(0, 0);
+                    fish.update(elapsedTime);
+                    fish.render(gc);}
 
                 String pointsText = "Eaten fish: " + (score.value);
                 gc.fillText(pointsText, 360, 36);
