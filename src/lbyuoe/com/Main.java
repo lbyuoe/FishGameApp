@@ -29,6 +29,7 @@ public class Main extends Application {
         pane.setStyle("-fx-background-image: url('/image/bg.jpg')");
         Scene scene = new Scene(pane);
         stage.setScene(scene);
+        stage.setResizable(false);
         // set Canvas
         Canvas canvas = new Canvas(1180, 640);
         pane.getChildren().add(canvas);
